@@ -1,0 +1,50 @@
+#1. Understand OSI & TCP/IP Models
+
+#Learn about the OSI and TCP/IP models, including their layers and purposes.
+
+=========================================
+
+Application Layer :
+
+
+if we are trying to access a website, the HTTP request will sent to the web server, then the verification process will happen between them, and then the web server shows the HTML web page to the user
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Presentation Layer :
+
+if a user sends a large important email to someone, the presentation layer will encrypt the data to prevent it from tampering and also compress it to make sure the mail will reach the receiver as fast as possible and translate the format, which is suitable to read the receiver.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+Session Layer :
+
+Playing online games is a example of Session Layer. When you start playing an online game, a session will be created and synchronize the user data to the game server. This session persists until the game stops and also user data will be stored on the server during this time
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Transport Layer :
+
+A user sends a larger file to a remote server via VPN, then the VPN uses the TCP or UDP protocol to ensure connection reliability and speed also it is a larger file, so it should be segmented as well as control the data flow for smooth transmission.
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Network Layer :
+
+routers as an example to explain this layer. Routers make communication between different networks and also use a routing table to find the best route to transmit the data in a secure and reliable manner.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+Data Link Layer :
+
+Ethernet switch is a perfect example of this layer. Switches are used for inter-network communications and frame the data to travel to the physical objects.
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Physical Layer :
+
+Optical fiber cables and Bluetooth connectivity are a few examples of this layer.
