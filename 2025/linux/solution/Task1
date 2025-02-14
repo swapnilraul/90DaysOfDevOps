@@ -1,0 +1,55 @@
+#User & Group Management
+#Learn about Linux users, groups, and permissions (/etc/passwd, /etc/group).
+
+===============================================================================================================
+# Create a user devops_user and add them to a group devops_team.
+
+ubuntu@ip-172-31-8-139:~$ sudo useradd -m devops_user
+ubuntu@ip-172-31-8-139:~$
+ubuntu@ip-172-31-8-139:~$ cat /etc/passwd | grep devops_user
+devops_user:x:1014:1014::/home/devops_user:/bin/sh
+ubuntu@ip-172-31-8-139:~$
+
+ubuntu@ip-172-31-8-139:~$ sudo usermod -aG devops_team devops_user
+ubuntu@ip-172-31-8-139:~$
+ubuntu@ip-172-31-8-139:~$ cat /etc/group | grep devops_team
+devops_team:x:1015:devops_user
+ubuntu@ip-172-31-8-139:~$
+
+=================================================================================================================
+
+# Set a password and grant sudo access.
+
+ubuntu@ip-172-31-8-139:~$ sudo passwd devops_user
+New password:
+Retype new password:
+passwd: password updated successfully
+ubuntu@ip-172-31-8-139:~$
+ubuntu@ip-172-31-8-139:~$
+
+# For granting the sudo permission the user has been added in /etc/sudoers File with all sudo previllages.
+
+ubuntu@ip-172-31-8-139:~$ sudo cat /etc/sudoers | grep devops_user
+devops_user ALL=(ALL:ALL) ALL
+ubuntu@ip-172-31-8-139:~$
+
+=====================================================================================================================
+
+# Restrict SSH login for certain users in /etc/ssh/sshd_config.
+
+#For this some users have been created to check i.e test1, test2, test3, test4
+
+ubuntu@ip-172-31-8-139:~$ cat /etc/passwd | grep test
+test1:x:1015:1016::/home/test1:/bin/sh
+test2:x:1016:1017::/home/test2:/bin/sh
+test3:x:1017:1018::/home/test3:/bin/sh
+test4:x:1018:1019::/home/test4:/bin/sh
+ubuntu@ip-172-31-8-139:~$
+
+
+ubuntu@ip-172-31-8-139:~$ cat /etc/ssh/ssh_config | grep test
+    AllowUsers test1 test2
+    DenyUsers test3 test4
+ubuntu@ip-172-31-8-139:~$
+
+=================================================================================================================
